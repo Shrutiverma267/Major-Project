@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <style>
+        body{
+            background-color:transparent;
+            background-image: url('/static/images/image3.jpg');
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+        }
+        .card{
+            background-color: black;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="container vh-100 " >
+        <div class="row">
+            <div class="col-sm-12 col-md-7" style="margin-top: 2rem;">
+                {% include "notification.html" %}
+                <div class="card shadow-lg m-4 " >
+                    <div class="card-header">
+                        <div class="card-title"><h2><font color="lightcoral"><u>Register your account</u></font></h2></div>
+                    </div>
+                    <form method="POST" class="p-5">
+                        <div class="form-group">
+                          <label for="name"><font color="lightcoral"><b>Your Name</b></font></label>
+                          <input type="text"
+                            class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="">
+                          <small id="helpId" class="form-text text-muted">fill in the full name</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="email"><font color="lightcoral"><b> Email Address</b></font></label>
+                          <input type="email"
+                            class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="john@gamil.com">
+                          <small id="emailHelp" class="form-text text-muted">enter a valid email address</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="password"><font color="lightcoral"><b> Password </b></font></label>
+                          <input type="password"
+                            class="form-control" name="password" id="password" aria-describedby="passhelpId" placeholder="min 6 chars">
+                          <small id="passhelpId" class="form-text text-muted">enter a good password</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="cpassword"><font color="lightcoral"><b>Confirm Password</b></font></label>
+                          <input type="password"
+                            class="form-control" name="cpassword" id="cpassword" aria-describedby="cpasshelpId" placeholder="enter password again">
+                          <small id="cpasshelpId" class="form-text text-muted">enter a good password</small>
+                        </div>
+                        <button class="btn btn-success btn-block">Continue</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+<script>
+      $(function () {
+          anime({
+          targets: '.card',
+          scale: [.9,1],
+          delay: 500
+        });
+      });
+</script>
+{% endblock %}

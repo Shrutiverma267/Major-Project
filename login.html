@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+  body{
+    background-image: url('/static/images/image3.jpg');
+    background-size: cover;
+  }
+  .card{
+    background-color: black;
+  }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="container vh-100 " >
+        <div class="row mx-auto" >
+            <div class="col-sm-12 col-md-7" style="margin-top: 4rem;">
+                {% include "notification.html" %}
+                <div class="card shadow-lg m-4 " >
+                    <div class="card-header">
+                        <div class="card-title"><h2><font color="lightcoral"><b><u>Login into Account</u></b></font></h2></div>
+                    </div>
+                    <form method="POST" class="p-5">
+                        <div class="form-group">
+                          <label for="email"><font color="lightcoral"><b>Email Address</b></font></label>
+                          <input type="email"
+                            class="form-control" name="email" id="email" aria-describedby="emailHelp">
+                          <small id="emailHelp" class="form-text text-muted">the one that you have registered with</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="password"><font color="lightcoral"><b>Password</b></font></label>
+                          <input type="password"
+                            class="form-control" name="password" id="password" aria-describedby="passhelpId" >
+                          <small id="passhelpId" class="form-text text-muted">your password</small>
+                        </div>
+                        <button class="btn btn-success btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+<script>
+      $(function () {
+          anime({
+          targets: '.card',
+          scale: [.9,1],
+          delay: 500
+        });
+      });
+</script>
+{% endblock %}
